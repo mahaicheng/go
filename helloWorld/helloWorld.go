@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"strconv"
 )
 
 func main() {
@@ -15,8 +13,11 @@ func main() {
 	// z = append(x, 3)
 	// fmt.Println(x)
 	// fmt.Println(y, z)
-	i, _ := strconv.Atoi(os.Args[1])
-	fmt.Println(fabonaqi(uint64(i)))
+	// i, _ := strconv.Atoi(os.Args[1])
+	// fmt.Println(fabonaqi(uint64(i)))
+
+	strings := []string{"ma", "mahaicheng", "", "huanghui"}
+	fmt.Println(noEmpty(strings))
 }
 
 func fabonaqi(i uint64) uint64 {
@@ -31,4 +32,15 @@ func fabonaqi(i uint64) uint64 {
 
 func nami(i uint16) int {
 	return int(i)
+}
+
+func noEmpty(strings []string) []string {
+	i := 0
+	for _, s := range strings {
+		if s != "" {
+			strings[i] = s
+			i++
+		}
+	}
+	return strings
 }
