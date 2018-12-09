@@ -15,27 +15,27 @@ func main() {
 	w = new(bytes.Buffer)
 	fmt.Printf("%T\n", w)
 	v := new(distance)
-	v.Set(1003)
+	v.set(1003)
 	x := 1023
 	fmt.Println(process(v, x))
 }
 
 type adder interface {
-	Add(int) int
+	add(int) int
 }
 
 type distance struct {
 	i int
 }
 
-func (d *distance) Set(i int) {
+func (d *distance) set(i int) {
 	d.i = i
 }
 
-func (d distance) Add(x int) int {
+func (d distance) add(x int) int {
 	return d.i + x
 }
 
 func process(a adder, x int) int {
-	return a.Add(x)
+	return a.add(x)
 }
